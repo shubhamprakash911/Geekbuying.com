@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <script src="https://kit.fontawesome.com/3616362b1c.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+        }
+
+        #head {
+            height: 120px;
+            background-color: rgb(1, 87, 155);
+            color: white;
+            display: flex;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .image {
+            width: 25%;
+            margin: auto;
+            padding: 24px;
+        }
+
+        #total {
+            text-align: center;
+            background-color: aliceblue;
+        }
+
+        #home>a {
+            color: white;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: rgb(1, 87, 155);
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        #cart-container{
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 23px 23px;
+            margin-top: 12px;
+        }
+        #cart-container>div{
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 13px;
+        line-height: 23px;
+        width: 180px;
+        margin-bottom: 12px;
+      }
+      .userDetail button{
+        padding: 10px 10px;
+        font-size: 20px;
+        border-radius: 7px;
+      }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="head">
+        <div class="image"><img src="./images/Apna Bazar-logos.jpeg" alt=""></div>
+        <div id="home"> <a href="./index.html">Home</a></div>
+    </div>
+
+    
+    <div id="cart-container"></div>
+    <div class="userDetail">
+        <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span> <span> <a href="./userDatail.html"> <button> Buy Now </button> </a> </span></h1>
+    </div>
+
+</body>
+
+<Script>
+
+    let LScart = JSON.parse(localStorage.getItem("cart")) || [];;
+    let cont = document.getElementById("cart-container")
+    let cartTotal = document.getElementById("cart-total")
+    let sum;
+    display(LScart)
+
+    function display(LScart) {
+        sum = 0;
+        cartTotal.innerText=sum
+        cont.innerHTML = null;
+        LScart.forEach((el, i) => {
+            let card = document.createElement("div")
+            sum = sum + (el.quantity * el.price)
+            cartTotal.innerText = sum
+
+            let image = document.createElement("img")
+            image.setAttribute("src", el.img)
+
+            let brand = document.createElement("h3")
+            brand.innerText = el.brand
+
+            let price = document.createElement("h5")
+            price.innerText = el.price
+
+            let category = document.createElement("p")
+            category.innerText = el.category
+
+            let plus = document.createElement("button")
+            plus.innerText = "+"
+
+            let quantity = document.createElement("span")
+            quantity.innerText = el.quantity
+
+            let btn2 = document.createElement("button")
+            btn2.innerText = "-"
+
+            let remove = document.createElement("button")
+            remove.innerText = "Remove"
+
+            plus.addEventListener("click", () => {
+                quantity.innerText = ++el.quantity
+                localStorage.setItem("cart", JSON.stringify(LScart))
+                display(LScart)
+            })
+
+
+            btn2.addEventListener("click", () => {
+                quantity.innerText = --el.quantity
+                localStorage.setItem("cart", JSON.stringify(LScart))
+                display(LScart)
+            })
+
+            remove.addEventListener("click", () => {
+                LScart.splice(i, 1)
+                localStorage.setItem("cart", JSON.stringify(LScart))
+                display(LScart)
+            })
+
+
+            card.append(image, brand, price, category, plus, quantity, btn2, remove)
+            cont.append(card)
+        })
+    }
+
+
+
+
+</Script>
+
+</html>

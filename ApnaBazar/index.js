@@ -28,6 +28,7 @@
         i++
     }, 3000)
 
+    let LScart=JSON.parse(localStorage.getItem("cart"))||[];
     let products = document.getElementById("products")
     fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-tech-products")
         .then((responseobj) => {
