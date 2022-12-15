@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+
+    <div class="top">
+        <div class="image"><img src="./images/Apna Bazar-logos.jpeg" alt=""></div>
+    </div>
+       
+    <div class="background">
+        
+        <div id="signIn">
+ 
+            <h2>SIGNIN FORM</h2>
+        <form>
+            <div class="form-group">
+                <input type="email" name="email" id="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="pwd" id="pwd" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign In</button>
+            </div>
+        </form>
+        <p>Don't have an account? <a href="./signUp.html">Sign Up</a> here</p>
+        
+        </div>
+        
+    </div>
+
+  
+</body>
+   
+  <script>
+
+    let signUpData=JSON.parse(localStorage.getItem("account-data"))||[];
+    let myform=document.querySelector("form")
+    
+    myform.addEventListener("submit",(event)=>{
+        event.preventDefault();
+
+        let userdata={
+            email:myform.email.value,
+            pwd:myform.pwd.value
+        }
+
+        for(let i=0; i<signUpData.length; i++){
+            if(signUpData[i].email===userdata.email && signUpData[i].pwd===userdata.pwd){
+                location.replace("http://127.0.0.1:5500/ApnaBazar/index.html")
+                alert("SignIn successful")
+            }
+            else{
+                alert("Incorrect login credentials\nPlease SignUp in case you don't have account using below link");
+            }     
+        }
+        if(signUpData.length==0){
+                alert("Incorrect login credentials\nPlease SignUp in case you don't have account using below link");
+            }
+    })
+  </script>
+</html>

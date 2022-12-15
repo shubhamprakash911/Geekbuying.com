@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="stylesheet" href="./login.css">
+</head>
+<body>
+    <div class="top">
+        <div class="image"><img src="./images/Apna Bazar-logos.jpeg" alt=""></div>
+    </div>
+
+    <div class="background">
+
+        <div id="signUp">
+            <form>
+                <div class="form-group">
+                    <input type="text" name="fname" id="fname" placeholder="First Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="lname" id="lname" placeholder="Last Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="number"  id="phone" placeholder="Phone No." required>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="address" placeholder="Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" id="pincode" placeholder="Pincode" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Confirm Order</button>
+                    <!-- <input type="submit" value="Submit"> -->
+                </div>
+            </form>
+            
+        </div>
+
+    </div>
+   
+       
+    
+
+</body> 
+   <script>
+     
+     let data=JSON.parse(localStorage.getItem("userDetail"))||[];
+     let myform=document.querySelector("form")
+
+     myform.addEventListener("submit",(event)=>{
+        event.preventDefault();
+        
+        let userdata={
+            fname:myform.fname.value,
+            lname:myform.lname.value,
+            email:myform.email.value,
+            phone:myform.phone.value,
+            address:myform.address.value,
+            pincode:myform.pincode.value
+        }
+        
+            data.push(userdata)
+            localStorage.setItem("userDetail",JSON.stringify(data))
+            alert("Your order is Placed\nThank you for shopping with us");   
+            location.replace("http://127.0.0.1:5500/ApnaBazar/index.html")
+        
+     })
+   </script>
+</html>
