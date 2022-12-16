@@ -54,3 +54,10 @@ button{
     background-size: 100%;
     background-repeat: no-repeat;
 }
+#signIn>h2, #signUp>h2,#head{
+    background-color: rgb(1, 87, 155);
+    color: white;
+    width:89%;
+    text-align: center;
+    height: 30px;
+}

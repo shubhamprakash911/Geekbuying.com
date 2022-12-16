@@ -61,7 +61,7 @@ img {
     width: 90%;
     margin: auto;
     margin-top: 25px;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 
 }
 
@@ -162,4 +162,13 @@ img {
     margin-top: 20px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
     padding: 14px;
+}
+#beauty{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 90%;
+    margin: auto;
+    gap: 22px 22px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding: 12px;
 }
