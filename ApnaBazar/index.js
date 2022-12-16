@@ -54,7 +54,7 @@
             brand.innerText = el.brand
 
             let price = document.createElement("h5")
-            price.innerText = el.price
+            price.innerText = "₹ "+el.price
 
             let category = document.createElement("p")
             category.innerText = el.category

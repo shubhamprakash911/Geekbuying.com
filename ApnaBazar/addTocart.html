@@ -53,7 +53,8 @@
             margin: 4px 2px;
             cursor: pointer;
         }
-        #cart-container{
+
+        #cart-container {
             width: 90%;
             margin: auto;
             display: grid;
@@ -61,19 +62,68 @@
             gap: 23px 23px;
             margin-top: 12px;
         }
-        #cart-container>div{
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        padding: 13px;
-        line-height: 23px;
-        width: 180px;
-        margin-bottom: 12px;
-      }
-      .userDetail button{
-        padding: 10px 10px;
-        font-size: 20px;
-        border-radius: 7px;
-      }
 
+        #cart-container>div {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 13px;
+            line-height: 23px;
+            width: 180px;
+            margin-bottom: 12px;
+        }
+
+        .userDetail button {
+            padding: 10px 10px;
+            font-size: 20px;
+            border-radius: 7px;
+        }
+
+        #footer {
+            background-color: rgb(233, 233, 233);
+            margin-top: 15px;
+        }
+
+        #footer>.top {
+            text-align: center;
+            color: rgb(1, 87, 155);
+            padding: 34px;
+        }
+
+        #subscribe {
+            width: 50%;
+            background-color: rgb(1, 87, 155);
+            color: white;
+            margin: auto;
+            font-size: 19px;
+            margin-top: 3%;
+            margin-bottom: 4%;
+        }
+
+        #subscribe>input {
+            width: 85%;
+            height: 30px;
+        }
+
+        #midDetail {
+            display: flex;
+            line-height: 29px;
+            justify-content: space-evenly;
+        }
+
+        #logoCont i {
+            width: 30px;
+        }
+
+        #footerLast>div {
+            background-color: whitesmoke;
+            margin: auto;
+            padding: 9px;
+        }
+
+        #footerLast {
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            margin-bottom: 2px;
+        }
     </style>
 </head>
 
@@ -84,10 +134,90 @@
         <div id="home"> <a href="./index.html">Home</a></div>
     </div>
 
-    
+
     <div id="cart-container"></div>
     <div class="userDetail">
-        <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span> <span> <a href="./userDatail.html"> <button> Buy Now </button> </a> </span></h1>
+        <h1 id="total">Your Total cart Price is:- ₹<span id="cart-total">0</span> <span> <a href="./userDatail.html">
+                    <button> Order Now </button> </a> </span></h1>
+    </div>
+
+    <div id="footer">
+        <h2 class="top">Why buy from geekbuying?</h2>
+        <div id="subscribe"><input type="text" placeholder="Enter email to get a 5% off coupon"> Subscribe</div>
+
+        <div id="midDetail">
+            <div>
+                <h3>Help</h3>
+                <p>Order status</p>
+                <p>About us</p>
+                <p>Contact us</p>
+                <p>Warranty</p>
+                <p>FAQs</p>
+                <p>Sitemap</p>
+            </div>
+
+            <div>
+                <h3>Support</h3>
+                <p>WhatGeek</p>
+                <p>Shipping guide</p>
+                <p>Payment information</p>
+                <p>Wholesale</p>
+                <p>Drop shipping</p>
+                <p>Blop</p>
+                <p>Affiliates</p>
+            </div>
+
+            <div>
+                <h3>Policies</h3>
+                <p>Terms & conditions</p>
+                <p>Return policy</p>
+                <p>Privacy</p>
+                <p>Declaration</p>
+                <p>customs</p>
+            </div>
+
+            <div>
+                <h3>Download The App</h3>
+                <div><img src="https://content1.geekbuying.com/V1.4/en/images/index_images/app_store.jpg" alt=""></div>
+                <div><img src="https://content1.geekbuying.com/V1.4/en/images/index_images/google_play.jpg" alt="">
+                </div>
+                <div><img src="https://content1.geekbuying.com/V1.4/en/images/index_images/gallery.jpg" alt=""></div>
+
+                <h3>Connect with us</h3>
+                <div id="logoCont">
+                    <a href="https://www.facebook.com/Geekbuyingfans/"><i class="fa-brands fa-square-facebook"></i></a>
+                    <a href="https://www.youtube.com/channel/UCoA_48UdyHqLy9HpCpFUi4A"><i
+                            class="fa-brands fa-youtube"></i></a>
+
+                    <i class="fa-brands fa-telegram"></i>
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-square-twitter"></i>
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+
+            </div>
+
+            <div>
+                <h4> <i class="fa-regular fa-envelope"></i> service@geekbuying.com</h4>
+                <h4> <i class="fa-solid fa-ticket"></i> Ticket</h4>
+                <h4> <i class="fa-regular fa-headset"></i> Live chat</h4>
+            </div>
+        </div>
+
+        <h2>Popular Searches</h2>
+        <div id="footerLast">
+
+            <div>ENGWE</div>
+            <div>MINIFORUM</div>
+            <div>Geekbuying</div>
+            <div>Roborock</div>
+            <div>powkiddy</div>
+            <div>Miyoo Mini</div>
+            <div>sculpfun</div>
+            <div>laserpecker</div>
+            <div>Witoys</div>
+            <div>mini laptop</div>
+        </div>
     </div>
 
 </body>
@@ -102,8 +232,9 @@
 
     function display(LScart) {
         sum = 0;
-        cartTotal.innerText=sum
+        cartTotal.innerText = sum
         cont.innerHTML = null;
+
         LScart.forEach((el, i) => {
             let card = document.createElement("div")
             sum = sum + (el.quantity * el.price)
