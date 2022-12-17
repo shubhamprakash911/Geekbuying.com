@@ -60,12 +60,12 @@ img {
 #slideshow1,#slideshow2 {
     width: 90%;
     margin: auto;
-    margin-top: 25px;
+    margin-top: 10px;
     margin-bottom: 25px;
 
 }
 
-#products {
+#products{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     gap: 23px 23px;
@@ -171,4 +171,48 @@ img {
     gap: 22px 22px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     padding: 12px;
+}
+#searchBtn{
+    background-color:rgb(1, 87, 155) ;
+    color: white;
+    border: 0;
+}
+#notFound{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 35px;
+}
+#searchItems{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 90%;
+    margin: auto;
+    line-height: 24px;
+
+}
+#searchItems>div{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    width: 80%;
+    gap: 25px 25px;
+    margin-bottom: 15%;
+    padding: 6%;
+}
+#searchItems button{
+    background-color: rgb(1, 87, 155);
+    border: none;
+    color: white;
+    padding: 8px 18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 8px 0px;
+    cursor: pointer;
+    border-radius: 13px;
+
+}
+#topBeauty{
+    width: 90%;
+    margin: auto;
 }
