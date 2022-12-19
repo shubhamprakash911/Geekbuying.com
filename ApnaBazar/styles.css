@@ -193,10 +193,12 @@ img {
 }
 #searchItems>div{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-    width: 80%;
-    gap: 25px 25px;
+    width: 60%;
+    gap: 15px 15px;
+    margin: auto;
     margin-bottom: 15%;
     padding: 6%;
+   
 }
 #searchItems button{
     background-color: rgb(1, 87, 155);
