@@ -28,7 +28,7 @@
         slideshow2.append(slideimg2)
         slideshow1.append(slideimg)
         i++
-    }, 3000)
+    }, 2500)
 
     let LScart=JSON.parse(localStorage.getItem("cart"))||[];
     let products = document.getElementById("products")
