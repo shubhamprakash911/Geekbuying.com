@@ -1,9 +1,9 @@
-# spiteful-celery-7979
+# Geekbuying.com
 
-##[Geekbuying](https://cheery-torrone-a8e766.netlify.app/)
+## Deployed link [Geekbuying](https://iridescent-torte-1e657d.netlify.app)
 
 clone of geekbuying.com
-geekbuying.comm is an e-commerce website from where you can buy differents products.
+geekbuying.com is an e-commerce website from where you can buy differents products.
 
 Tech-Stack Used :
 HTML | CSS | JavaScript
