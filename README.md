@@ -5,7 +5,8 @@
 Geekbuying is an online retail store that specializes in selling consumer
 electronics, gadgets, and accessories.
 
-Tech-Stack Used :
+### Tech-Stack Used 
 HTML | CSS | JavaScript
-Features :
+
+### Features
 Homepage | Cart page | Login & Signup page | Checkout Page
